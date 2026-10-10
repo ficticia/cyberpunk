@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FICTICIA//NEON — paralelo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<div class="grid-floor" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="hud">
+  <div class="hud-brand">
+    <h1 class="glitch" data-text="FICTICIA//NEON">FICTICIA//NEON</h1>
+    <span class="hud-sub">MULTIVERSO · 6 TIMELINES · 10 SEÑALES</span>
+  </div>
+  <div class="hud-readout" aria-live="off">
+    <span class="ro"><i>SYS</i><b id="roState">ONLINE</b></span>
+    <span class="ro"><i>UNI</i><b id="roUni">PRIME</b></span>
+    <span class="ro"><i>TRK</i><b id="roTrk">01/10</b></span>
+    <span class="ro"><i>CLK</i><b id="roClock">00:00:00</b></span>
+    <span class="ro rec"><i>REC</i><b id="roRec">●</b></span>
+  </div>
+</header>
+
+<section class="universes" aria-label="Universos paralelos">
+  <div class="uni-strip" id="uniStrip" role="tablist"></div>
+  <p class="uni-blurb" id="uniBlurb"></p>
+</section>
+
+<main class="stage">
+  <section class="panel tracks" aria-label="Temas">
+    <div class="panel-head">
+      <h2>▚ TRANSMISIONES</h2>
+      <span class="panel-note" id="tracksNote">10 señales · click para inyectar</span>
+    </div>
+    <ul class="track-list" id="trackList"></ul>
+  </section>
+
+  <section class="panel versions" aria-label="Versiones del tema">
+    <div class="panel-head">
+      <h2>◈ VERSIONES // <span id="verTitle">—</span></h2>
+      <span class="panel-note">universo paralelo · misma señal, distinta realidad</span>
+    </div>
+    <div class="ver-list" id="verList"></div>
+    <div class="ver-actions">
+      <button class="btn btn-mag" id="btnFork">⑂ BIFURCAR TIMELINE</button>
+      <button class="btn btn-cyan" id="btnCompare">⇄ COMPARAR TODO</button>
+    </div>
+  </section>
+</main>
+
+<footer class="deck">
+  <div class="deck-viz">
+    <canvas id="spectrum" aria-hidden="true"></canvas>
+    <canvas id="wave" aria-hidden="true"></canvas>
+  </div>
+  <div class="deck-main">
+    <div class="deck-track">
+      <span class="deck-title" id="deckTitle">—</span>
+      <span class="deck-meta"><span id="deckSide">—</span> · <span id="deckDur">0:00</span> · <span id="deckUni">PRIME</span></span>
+    </div>
+    <div class="deck-ctrl">
+      <button class="tbtn" id="bPrev" title="Anterior">⏮</button>
+      <button class="tbtn tbtn-main" id="bPlay" title="Play/Pause">▶</button>
+      <button class="tbtn" id="bNext" title="Siguiente">⏭</button>
+      <button class="tbtn" id="bRand" title="Aleatorio">⤨</button>
+    </div>
+    <div class="deck-time"><span id="tCur">0:00</span> / <span id="tDur">0:00</span></div>
+  </div>
+  <div class="deck-seek" id="seek" role="slider" aria-label="Progreso" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <i id="seekFill"></i>
+  </div>
+  <div class="deck-vol">
+    <label for="vol">VOL</label>
+    <input type="range" id="vol" min="0" max="100" value="70">
+  </div>
+</footer>
+
+<div class="modal-wrap" id="modalWrap" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <h3 id="modalTitle">// Overlay</h3>
+      <button class="modal-x" id="modalX" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot" id="modalFoot"></div>
+  </div>
+</div>
+
+<audio id="au" preload="metadata"></audio>
+<script src="app.js" defer></script>
+</body>
+</html>
