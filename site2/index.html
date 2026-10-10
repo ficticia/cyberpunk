@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FICTICIA_OS v2.0 // 486 DX2-66 // PARALLEL UNIVERSE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="dos">
+
+<div class="dos-frame">
+  <div class="title-bar">
+    <div class="title-icon">⬜</div>
+    <div class="title-text">FICTICIA_OS v2.0 - PARALLEL UNIVERSE MODULE</div>
+    <div class="title-btns">
+      <button class="btn-close" title="Cerrar">✕</button>
+      <button class="btn-max" title="Maximizar">□</button>
+      <button class="btn-min" title="Minimizar">─</button>
+    </div>
+  </div>
+
+  <div class="menu-bar" id="menuBar">
+    <div class="menu" data-menu="archivo">
+      <span class="menu-title">Archivo</span>
+      <div class="dropdown" id="dd-archivo">
+        <div class="dd-item" data-act="nuevo">Nuevo Universo  Ctrl+N</div>
+        <div class="dd-item" data-act="cargar">Cargar Timeline  Ctrl+O</div>
+        <div class="dd-item" data-act="guardar">Guardar Estado  Ctrl+S</div>
+        <div class="dd-sep"></div>
+        <div class="dd-item" data-act="salir">Salir a DOS  Alt+F4</div>
+      </div>
+    </div>
+    <div class="menu" data-menu="universo">
+      <span class="menu-title">Universo</span>
+      <div class="dropdown" id="dd-universo">
+        <div class="dd-item" data-act="prime">☰ Universo Prime (Original)</div>
+        <div class="dd-item" data-act="alpha">⬢ Universo Alpha (Remix)</div>
+        <div class="dd-item" data-act="beta">⬡ Universo Beta (Acústico)</div>
+        <div class="dd-item" data-act="gamma">◆ Universo Gamma (Instrumental)</div>
+        <div class="dd-item" data-act="delta">◇ Universo Delta (Live)</div>
+        <div class="dd-item" data-act="omega">★ Universo Omega (Final)</div>
+      </div>
+    </div>
+    <div class="menu" data-menu="ver">
+      <span class="menu-title">Ver</span>
+      <div class="dropdown" id="dd-ver">
+        <div class="dd-item" data-act="tracks">Lista de Temas  F1</div>
+        <div class="dd-item" data-act="compare">Comparar Universos  F2</div>
+        <div class="dd-item" data-act="diff">Diferencias  F3</div>
+        <div class="dd-sep"></div>
+        <div class="dd-item" data-act="monitor">Monitor de Onda  F4</div>
+        <div class="dd-item" data-act="spec">Espectro  F5</div>
+      </div>
+    </div>
+    <div class="menu" data-menu="herramientas">
+      <span class="menu-title">Herramientas</span>
+      <div class="dropdown" id="dd-herramientas">
+        <div class="dd-item" data-act="merge">Fusionar Timelines  Ctrl+M</div>
+        <div class="dd-item" data-act="fork">Bifurcar Actual  Ctrl+F</div>
+        <div class="dd-item" data-act="reset">Restaurar Prime  Ctrl+R</div>
+      </div>
+    </div>
+    <div class="menu" data-menu="ayuda">
+      <span class="menu-title">Ayuda</span>
+      <div class="dropdown" id="dd-ayuda">
+        <div class="dd-item" data-act="about">Acerca de FICTICIA_OS</div>
+        <div class="dd-item" data-act="keys">Teclas Rápidas  F1</div>
+        <div class="dd-item" data-act="lore">Lore del Multiverso</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="workspace" id="workspace">
+    <div class="panel left" id="panelLeft">
+      <div class="panel-header">
+        <span class="panel-title">🗂  NAVEGADOR DE TIMELINES</span>
+        <button class="panel-btn" id="btnCollapseLeft" title="Colapsar">◀</button>
+      </div>
+      <div class="panel-content" id="timelineTree">
+        <div class="tree-root expanded" data-path="prime">
+          <span class="tree-toggle">▼</span>
+          <span class="tree-icon">☰</span>
+          <span class="tree-label">Universo Prime <span class="tree-badge">ORIGINAL</span></span>
+          <div class="tree-children">
+            <div class="tree-item" data-track="0"><span class="tree-num">01</span>TECNO OLI GARCAS</div>
+            <div class="tree-item" data-track="1"><span class="tree-num">02</span>SILLAS VACÍAS</div>
+            <div class="tree-item" data-track="2"><span class="tree-num">03</span>AMOR INHUMANO</div>
+            <div class="tree-item" data-track="3"><span class="tree-num">04</span>INSATISFACCIÓN PRODUCTIVA</div>
+            <div class="tree-item" data-track="4"><span class="tree-num">05</span>MANUAL DE SUPERVIVENCIA</div>
+            <div class="tree-item" data-track="5"><span class="tree-num">06</span>EL PROMPT</div>
+            <div class="tree-item" data-track="6"><span class="tree-num">07</span>CAJA NEGRA</div>
+            <div class="tree-item" data-track="7"><span class="tree-num">08</span>ÚLTIMOS HOMBRES</div>
+            <div class="tree-item" data-track="8"><span class="tree-num">09</span>UNA NUEVA ESPERANZA</div>
+            <div class="tree-item" data-track="9"><span class="tree-num">10</span>TODAVÍA ESTAMOS ACÁ</div>
+          </div>
+        </div>
+        <div class="tree-root" data-path="alpha">
+          <span class="tree-toggle">▶</span>
+          <span class="tree-icon">⬢</span>
+          <span class="tree-label">Universo Alpha <span class="tree-badge">REMIX</span></span>
+          <div class="tree-children hidden"></div>
+        </div>
+        <div class="tree-root" data-path="beta">
+          <span class="tree-toggle">▶</span>
+          <span class="tree-icon">⬡</span>
+          <span class="tree-label">Universo Beta <span class="tree-badge">ACÚSTICO</span></span>
+          <div class="tree-children hidden"></div>
+        </div>
+        <div class="tree-root" data-path="gamma">
+          <span class="tree-toggle">▶</span>
+          <span class="tree-icon">◆</span>
+          <span class="tree-label">Universo Gamma <span class="tree-badge">INSTRUMENTAL</span></span>
+          <div class="tree-children hidden"></div>
+        </div>
+        <div class="tree-root" data-path="delta">
+          <span class="tree-toggle">▶</span>
+          <span class="tree-icon">◇</span>
+          <span class="tree-label">Universo Delta <span class="tree-badge">LIVE</span></span>
+          <div class="tree-children hidden"></div>
+        </div>
+        <div class="tree-root" data-path="omega">
+          <span class="tree-toggle">▶</span>
+          <span class="tree-icon">★</span>
+          <span class="tree-label">Universo Omega <span class="tree-badge">FINAL</span></span>
+          <div class="tree-children hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="splitter" id="splitterV"></div>
+
+    <div class="panel center" id="panelCenter">
+      <div class="panel-header">
+        <span class="panel-title" id="centerTitle">📺 UNIVERSO PRIME — VISTA PRINCIPAL</span>
+        <div class="panel-tabs" id="centerTabs">
+          <button class="tab active" data-view="list">LISTA</button>
+          <button class="tab" data-view="compare">COMPARAR</button>
+          <button class="tab" data-view="wave">ONDA</button>
+          <button class="tab" data-view="meta">METADATOS</button>
+        </div>
+      </div>
+      <div class="panel-content" id="centerContent">
+        <div class="view active" id="viewList">
+          <div class="track-list" id="trackList"></div>
+        </div>
+        <div class="view" id="viewCompare">
+          <div class="compare-grid" id="compareGrid"></div>
+        </div>
+        <div class="view" id="viewWave">
+          <canvas class="wave-canvas" id="waveCanvas"></canvas>
+          <div class="wave-info" id="waveInfo"></div>
+        </div>
+        <div class="view" id="viewMeta">
+          <div class="meta-grid" id="metaGrid"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="splitter" id="splitterH"></div>
+
+    <div class="panel right" id="panelRight">
+      <div class="panel-header">
+        <span class="panel-title">⚙  CONFIGURACIÓN UNIVERSO ACTUAL</span>
+        <button class="panel-btn" id="btnCollapseRight" title="Colapsar">▶</button>
+      </div>
+      <div class="panel-content" id="universeConfig">
+        <div class="universe-selector">
+          <label>Universo Activo:</label>
+          <select id="selUniverse">
+            <option value="prime">☰ Prime — Original 1994</option>
+            <option value="alpha">⬢ Alpha — Remix Industrial</option>
+            <option value="beta">⬡ Beta — Versión Acústica</option>
+            <option value="gamma">◆ Gamma — Solo Instrumental</option>
+            <option value="delta">◇ Delta — Grabación en Vivo</option>
+            <option value="omega">★ Omega — Mezcla Final</option>
+          </select>
+        </div>
+        <div class="config-section">
+          <h4>Parámetros de Realidad</h4>
+          <div class="slider-row">
+            <span class="slider-label">Entropía</span>
+            <input type="range" class="slider" id="slEntropy" min="0" max="100" value="15">
+            <span class="slider-val" id="vEntropy">15%</span>
+          </div>
+          <div class="slider-row">
+            <span class="slider-label">Divergencia</span>
+            <input type="range" class="slider" id="slDivergence" min="0" max="100" value="30">
+            <span class="slider-val" id="vDivergence">30%</span>
+          </div>
+          <div class="slider-row">
+            <span class="slider-label">Estabilidad</span>
+            <input type="range" class="slider" id="slStability" min="0" max="100" value="85">
+            <span class="slider-val" id="vStability">85%</span>
+          </div>
+          <div class="slider-row">
+            <span class="slider-label">Ruido Cuántico</span>
+            <input type="range" class="slider" id="slQuantum" min="0" max="100" value="5">
+            <span class="slider-val" id="vQuantum">5%</span>
+          </div>
+        </div>
+        <div class="config-section">
+          <h4>Filtros Temporales</h4>
+          <label class="chk"><input type="checkbox" id="chkShowDeleted" checked> Mostrar tracks eliminados</label>
+          <label class="chk"><input type="checkbox" id="chkShowAlternate" checked> Mostrar versiones alternativas</label>
+          <label class="chk"><input type="checkbox" id="chkShowUnreleased"> Mostrar material inédito</label>
+          <label class="chk"><input type="checkbox" id="chkAutoSync"> Auto-sincronizar universos</label>
+        </div>
+        <div class="config-section">
+          <h4>Estado del Sistema</h4>
+          <div class="sys-stats">
+            <div class="stat-row"><span>CPU:</span><span id="statCPU">12%</span></div>
+            <div class="stat-row"><span>RAM:</span><span id="statRAM">4.2 / 8 MB</span></div>
+            <div class="stat-row"><span>Caché:</span><span id="statCache">64 KB</span></div>
+            <div class="stat-row"><span>Timeline:</span><span id="statTimeline">Prime → Alpha</span></div>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btnApply">APLICAR CAMBIOS</button>
+          <button class="btn btn-secondary" id="btnReset">RESTAURAR DEFAULTS</button>
+          <button class="btn btn-danger" id="btnPurge">PURGAR TIMELINE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-bar" id="statusBar">
+    <div class="status-left">
+      <span class="status-item" id="stUniverse">UNIVERSO: PRIME</span>
+      <span class="status-sep">|</span>
+      <span class="status-item" id="stTrack">TRACK: 01/10</span>
+      <span class="status-sep">|</span>
+      <span class="status-item" id="stMode">MODO: LISTA</span>
+    </div>
+    <div class="status-center">
+      <span class="blink" id="blinkRec">● MONITOR</span>
+      <span id="stTime">00:00:00</span>
+    </div>
+    <div class="status-right">
+      <span class="status-item">F1:Ayuda</span>
+      <span class="status-sep">|</span>
+      <span class="status-item">F2:Comparar</span>
+      <span class="status-sep">|</span>
+      <span class="status-item">F3:Diff</span>
+      <span class="status-sep">|</span>
+      <span class="status-item">F4:Onda</span>
+      <span class="status-sep">|</span>
+      <span class="status-item">F5:Spec</span>
+      <span class="status-sep">|</span>
+      <span class="status-item">INS:Insertar</span>
+      <span class="status-sep">|</span>
+      <span class="status-item">DEL:Eliminar</span>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" id="modalContent" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle">DIÁLOGO</span>
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter"></div>
+  </div>
+</div>
+
+<audio id="audioPlayer" preload="metadata"></audio>
+
+<script src="app.js" defer></script>
+</body>
+</html>
